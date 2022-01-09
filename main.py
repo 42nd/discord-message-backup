@@ -28,6 +28,7 @@ async def backup(ctx):
         await ctx.send("Check DM and save load key")
         dmch = await ctx.author.create_dm()
         await dmch.send(f"Your load key: ||{code}||") # send load key to dm
+                                                      # `||`: spoiler
 
 @bot.command()
 @commands.has_permissions(administrator=True)
@@ -43,7 +44,7 @@ async def load(ctx, loadkey):
         try:
             await webhook.send(content=obj["content"], username=obj["author"], avatar_url=obj["avatar"],
                                embeds=[discord.Embed.from_dict(i) for i in obj["embeds"]])
-        except: # if file is empty
+        except: # if message is empty
               await webhook.send(content="(empty message)", username=obj["author"], avatar_url=obj["avatar"], \
                                  embeds=[discord.Embed.from_dict(i) for i in obj["embeds"]])
       await webhook.delete()

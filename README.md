@@ -1,3 +1,3 @@
-# discord-py-message-backup-bot
-Discord.py message backup bot.
-recommend dpy v2.0.0
+# Dpy message backup bot
+Discord message backup bot made by discord.py.
+
